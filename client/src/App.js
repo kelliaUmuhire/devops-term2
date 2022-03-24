@@ -5,7 +5,8 @@ import CheckToken from "./components/CheckToken/CheckToken";
 function App() {
   return (
     <div className="App">
-      <div style={{ marginTop: "30px" }}>
+      <h1>Welcome To Electricity App</h1>
+      <div style={{ marginTop: "50px" }}>
         {" "}
         <GetToken />
       </div>

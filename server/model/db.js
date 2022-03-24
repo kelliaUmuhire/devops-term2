@@ -4,9 +4,10 @@ const db = {};
 db.mongoose = mongoose;
 
 // process.env.MONGO_URI
+// mongodb://mongo:27017/testing
 //connect to MongoDB server
 mongoose
-  .connect("mongodb://mongo:27017/testing", {
+  .connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })

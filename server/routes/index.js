@@ -18,6 +18,8 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
+  if (req.params.id.length !== 8 || parseInt(req.params.id) === NaN)
+    return res.status(400).send({ msg: "Invalid Token" });
   Token.findOne({ token_id: req.params.id })
     .then((token) => {
       if (!token) return res.status(404).send({ msg: "Token not found" });
