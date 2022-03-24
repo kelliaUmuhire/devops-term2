@@ -4,9 +4,9 @@ FROM node:16
 
 WORKDIR /usr/app/client/
 COPY client/package*.json ./
-RUN npm install 
+RUN yarn install 
 COPY client/ ./
-RUN npm run build
+RUN yarn build
 
 
 # Setup the server

@@ -7,8 +7,9 @@ export default function GetToken() {
   const [token, setToken] = useState("waiting...");
 
   const getToken = () => {
-    let stoken = token.toString();
-    if (stoken.length === 8) {
+    let smeter = meter.toString();
+    console.log(smeter);
+    if (smeter.length === 6) {
       axios
         .post("http://localhost:3050/api/token", { meter, money })
         .then((res) => setToken(res.data.token))
@@ -39,9 +40,11 @@ export default function GetToken() {
           required={true}
         />
       </div>
-      <button onClick={getToken}>Get token</button>
+      <button onClick={() => getToken()}>Get token</button>
       <div>
-        <div>Token: {token}</div>
+        <div style={{ fontWeight: "bold" }}>
+          Token: <span style={{ color: "#93f99e" }}>{token}</span>
+        </div>
       </div>
     </div>
   );
